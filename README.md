@@ -267,21 +267,9 @@ Class E
 
 allow all outbound traffic to public server (245.20.1.0/24)xc
 ingress 27017 from public server (245.20.1.0/24)
-### Create NACL
 
-![1st gif](images/1st%20gif.gif)
+### Allowing internet access to DB
 
-### Create Instance
-1. Follow the gif to create the instance
-![2nd gif](images/2nd%20gif.gif)
+Temperarily attach the internet gateway to the private route table and allow outbound traffic from the private subnet. This should allow you to access the internet to down load the required dependencies to allow the DB to function. Oncce the relelvant packages have been installed you can remove the internet from the DB and it will return to its role as a private subnet.
 
-## Testing - Inside GitBash
-1. create an ec2 instance with VPC of the one just created
 
-2. ssh into the instance
-
-3. run sudo apt-get install nginx
-
-4. go onto your browser and insert the IP of the instance created
-
-5. if VPC has been created effectively then you will Nginx install successful
